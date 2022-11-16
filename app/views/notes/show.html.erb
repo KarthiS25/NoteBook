@@ -1,0 +1,6 @@
+<h1>Note</h1>
+<%= image_tag(@note.image) %>
+<%= render @note %>
+<%= button_to "Destroy this note", note_path(@note), method: :delete %>
+<p><%= link_to "New Note", new_note_path %></p>
+<p><%= link_to "Show all Notes", notes_path%></p>

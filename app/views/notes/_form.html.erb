@@ -1,0 +1,28 @@
+<%= form_with(model: note) do |form|%>
+
+<div>
+<%= form.label :title%>
+<%= form.text_field :title %>
+</div>
+
+<div>
+<%= form.label :content %>
+<%= form.rich_text_area :content %>
+</div>
+
+<div>
+<% if @note.image.attached? %>
+    <%= image_tag note.image, style: "width:50%;height:100%;display:block" %>
+<% end %>
+<%= form.label :image %>
+<%= form.file_field :image, class:"form-control", accept: 'image/png, image/gif, image/jpeg' %>
+</div>
+
+<div>
+<%= form.hidden_field :user_id, value: current_user.id %>
+</div>
+
+<div>
+<%= form.submit%>
+</div>
+<% end %>
