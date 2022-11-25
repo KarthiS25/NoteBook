@@ -12,10 +12,10 @@
 
 <div>
 <% if @note.image.attached? %>
-    <%= image_tag note.image, style: "width:50%;height:100%;display:block" %>
+    <%= image_tag note.image, width:"23" %>
 <% end %>
 <%= form.label :image %>
-<%= form.file_field :image, class:"form-control", accept: 'image/png, image/gif, image/jpeg' %>
+<%= form.file_field :image, class:"form-control", accept: [:png, :jpg, :jpeg, :mp3] %>
 </div>
 
 <div>
